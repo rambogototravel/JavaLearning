@@ -10,8 +10,8 @@ import java.util.Set;
 public class SortUtils {
 
     public static Integer[] createArray() {
-        Integer[] numbers = new Integer[]{2, 1, 6, 4, 5, 8, 9, 7, 3, 10};
-//        Integer[] numbers = new Integer[]{46, 79, 56, 38, 40, 84};
+//        Integer[] numbers = new Integer[]{2, 1, 6, 4, 5, 8, 9, 7, 3, 10};
+        Integer[] numbers = new Integer[]{46, 79, 56, 38, 40, 84};
 
         System.out.println("排序前：");
         for (int n : numbers) {

@@ -5,6 +5,8 @@ import java.util.Random;
 import java.util.Set;
 
 /**
+ * 冒泡排序.
+ *
  * @author rambo yang
  */
 public class BubbleSortDemo {

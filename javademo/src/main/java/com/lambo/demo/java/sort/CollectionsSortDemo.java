@@ -12,7 +12,7 @@ public class CollectionsSortDemo {
 
         Integer[] numbers = SortUtils.createArray();
 
-        Arrays.sort(numbers);
+//        Arrays.sort(numbers);
 
         List<Integer> a = new ArrayList<>(Arrays.asList(numbers));
 

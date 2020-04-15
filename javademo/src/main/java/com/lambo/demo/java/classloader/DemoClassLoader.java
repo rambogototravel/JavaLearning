@@ -10,7 +10,9 @@ public class DemoClassLoader {
 
 //        test3();
 
-        System.out.println(ConstClass.HELLO_WORLD);
+//        System.out.println(ConstClass.HELLO_WORLD);
+
+        SubClass subClass = new SubClass();
     }
 
     private static void test3() {

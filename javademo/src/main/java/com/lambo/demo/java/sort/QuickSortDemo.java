@@ -1,11 +1,8 @@
 package com.lambo.demo.java.sort;
 
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.Random;
-import java.util.Set;
-
 /**
+ * 快速排序.
+ *
  * @author rambo yang
  */
 public class QuickSortDemo {
@@ -22,10 +19,8 @@ public class QuickSortDemo {
         }
         System.out.println();
 
-        long startTime = System.currentTimeMillis();
         quickSort(numbers, 0, numbers.length-1);
 
-        System.out.println("排序耗时：" + (System.currentTimeMillis() - startTime));
         System.out.println("排序后：");
         for (int n : numbers) {
             System.out.print(n);
@@ -49,32 +44,38 @@ public class QuickSortDemo {
     }
 
     static int partition(Integer[] numbers, int start, int end) {
-
+        //指定一个判断值
         int x = numbers[start];
 //        System.out.println("start:" + start + " end:" + end + " x:" + x);
 
         while (start < end) {
+
+            //遍历，筛选掉结束位置 > 判断位置的值，不需要进行交换
             while (start< end && numbers[end] >= x) {
                 end--;
             }
 
+            //若开始位置依然小于结束位置，则存在结束位置的值 > 判断位置的值，进行交换
             if (start < end) {
-                numbers[start] = numbers[end];
+                numbers[start] = numbers[end]; //把小于判断值的数据，集中到数组的左边
                 start++;
             }
 
+            //遍历，把筛选掉开始位置 < 判断位置的值，不需要进行交换
             while (start < end && numbers[start] <= x) {
                 start++;
             }
 
+            //若开始位置依然小于结束位置，则存在开始位置的值 > 判断位置的值，进行交换
             if (start < end) {
-                numbers[end] = numbers[start];
+                numbers[end] = numbers[start]; //把大于判断值的数据，集中到数组的右边
                 end--;
             }
         }
 
+        //一轮遍历后，得出判断值在数组中的位置
         numbers[start] = x;
-        return start;
+        return start; //返回该分界位置，便于后续左右边再进行分组交换
     }
 
 }

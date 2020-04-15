@@ -13,19 +13,21 @@ public class BinarySearchDemo {
 
         Integer[] numbers = SortUtils.createArray();
 
-        Arrays.sort(numbers);
+//        Arrays.sort(numbers);
 
         int iStart = 0;
 
-        int iEnd = numbers.length;
+        int iEnd = numbers.length - 1;
 
-        int k = 9;
+        int k = 38;
 
         int i = 0;
 
-        while (iStart < iEnd) {
+        while (iStart <= iEnd) {
 
-            int mid = (iEnd + iStart) / 2;
+//            int mid = (iEnd + iStart) / 2;
+
+            int mid = (k - numbers[iStart]) / (numbers[iEnd] - numbers[iStart]) * (iEnd - iStart);
 
             if (numbers[mid] == k) {
                 i = mid;

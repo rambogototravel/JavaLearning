@@ -59,6 +59,8 @@ public class TimeServer {
    class TimeServerHandler extends ChannelInboundHandlerAdapter {
        @Override
        public void channelRead(ChannelHandlerContext ctx, Object msg) throws Exception {
+           Thread.sleep(5000);
+
            ByteBuf buf = (ByteBuf) msg;
 
            byte[] req = new byte[buf.readableBytes()];

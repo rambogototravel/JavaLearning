@@ -9,21 +9,17 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>javademo</artifactId>
-    <name>javademo</name>
+    <artifactId>reactor-demo</artifactId>
+
+    <name>reactor-demo</name>
+    <!-- FIXME change it to the project's website -->
     <url>http://www.example.com</url>
 
     <dependencies>
-
         <dependency>
-            <groupId>io.netty</groupId>
-            <artifactId>netty-all</artifactId>
-            <version>4.1.42.Final</version>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.rocketmq</groupId>
-            <artifactId>rocketmq-common</artifactId>
-            <version>4.4.0</version>
+            <groupId>io.projectreactor</groupId>
+            <artifactId>reactor-core</artifactId>
+            <version>3.3.3.RELEASE</version>
         </dependency>
     </dependencies>
 </project>

@@ -31,6 +31,13 @@ public class TimeClient {
 
             ChannelFuture f = b.connect(host, port).sync();
 
+//            b.connect(host, port).channel().writeAndFlush(Unpooled.buffer("发送一条数据".getBytes().length).writeBytes("发送一条数据".getBytes())).addListener(new ChannelFutureListener() {
+//                @Override
+//                public void operationComplete(ChannelFuture future) throws Exception {
+//                    System.out.println("启动是否成功：" + future.isSuccess());
+//                }
+//            }).sync().channel().closeFuture().sync();
+
             f.channel().closeFuture().sync();
 
         } catch (InterruptedException e) {
@@ -66,11 +73,20 @@ public class TimeClient {
 
         @Override
         public void channelActive(ChannelHandlerContext ctx) throws Exception {
-            ctx.writeAndFlush(firstMessage);
+            System.out.println("channelActive");
+            ctx.writeAndFlush(firstMessage).addListener(new ChannelFutureListener() {
+                @Override
+                public void operationComplete(ChannelFuture future) throws Exception {
+                    System.out.println("启动是否成功：" + future.isSuccess());
+                }
+            });
+
+            System.out.println("Helo World");
         }
 
         @Override
         public void channelRead(ChannelHandlerContext ctx, Object msg) throws Exception {
+            System.out.println("channelRead");
             ByteBuf buf = (ByteBuf) msg;
 
             byte[] req = new byte[buf.readableBytes()];
@@ -84,6 +100,7 @@ public class TimeClient {
 
         @Override
         public void channelReadComplete(ChannelHandlerContext ctx) throws Exception {
+            System.out.println("channelReadComplete");
             super.channelReadComplete(ctx);
         }
 
