@@ -5,6 +5,8 @@ import java.util.Random;
 import java.util.Set;
 
 /**
+ * 希尔排序.
+ *
  * @author rambo yang
  */
 public class ShellSortDemo {
@@ -27,7 +29,7 @@ public class ShellSortDemo {
                 for (j = i - gap; j >= 0 && tmp < numbers[j]; j -= gap) {
                     numbers[j+gap] = numbers[j];
                 }
-
+                System.out.println(j);
                 numbers[j+gap] = tmp;
             }
         }

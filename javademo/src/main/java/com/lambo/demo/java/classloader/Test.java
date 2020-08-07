@@ -43,6 +43,8 @@ public class Test {
 
 //        Object obj1 = Test.class.getClassLoader().getParent().loadClass("com.lambo.demo.java.classloader.Test").newInstance();
 //        System.out.println(obj1.getClass());
+
+        System.out.println("ramboy".hashCode());
     }
 
 

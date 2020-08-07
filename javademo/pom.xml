@@ -14,7 +14,6 @@
     <url>http://www.example.com</url>
 
     <dependencies>
-
         <dependency>
             <groupId>io.netty</groupId>
             <artifactId>netty-all</artifactId>
@@ -24,6 +23,11 @@
             <groupId>org.apache.rocketmq</groupId>
             <artifactId>rocketmq-common</artifactId>
             <version>4.4.0</version>
+        </dependency>
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>LATEST</version>
         </dependency>
     </dependencies>
 </project>
